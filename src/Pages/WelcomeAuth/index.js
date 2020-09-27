@@ -5,19 +5,21 @@ import { colors } from '../../utils/colors';
 
 import ActionButton from './ActionButton';
 
-const WelcomeAuth = () => {
+const WelcomeAuth = ({navigation}) => {
+    const handleGoTo = screen =>{
+        navigation.navigate(screen);
+    };
+
     return (
         <View style={styles.wrapper.page}>
             <Image source={welcomeAuth} style={styles.wrapper.ilustration} />
             <Text style={styles.text.welcome}> Selamat datang di..TopIQ </Text>
             <ActionButton
                 desc="Silahkan Pilih Login Jika Sudah Memiliki Akun"
-                title="Masuk"
-            />
+                title="Masuk" onPress={() => handleGoTo('Login')} />
             <ActionButton
                 desc="Pilih Daftar Jika Belum Memiliki Akun"
-                title="Daftar"
-            />
+                title="Daftar" onPress={()=> handleGoTo('Register')} />
         </View>
     );
 };

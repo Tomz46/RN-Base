@@ -3,13 +3,13 @@ import { View, Text } from 'react-native';
 import { Button } from '../../components';
 import { colors } from '../../utils/colors';
 
-const ActionButton = ({ desc, title }) => {
-    return (
-        <View style={styles.wrapper.component}>
-            <Text style={styles.Text.desc}>{desc}</Text>
-            <Button title={title} />
-        </View>
-    );
+const ActionButton = ({desc, title, onPress}) => {
+  return (
+    <View style={styles.wrapper.component}>
+      <Text style={styles.Text.desc}>{desc}</Text>
+      <Button title={title} onPress={onPress} />
+    </View>
+  );
 };
 
 const styles = {
